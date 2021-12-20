@@ -15,5 +15,5 @@ You may need a server to run the app
 
 I had simple live-server installed and used the command “live-server” to launch the project from the command prompt 
 
-<p>All interaction with smart contracts is stored in index.js
+<p>All interaction with smart contracts and 1inch are stored in index.js
 Contract ABIs are in the ABIs/ folder </p>
