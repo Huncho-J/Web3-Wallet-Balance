@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>Diffuse-proj</title>
+		<meta charset="utf-8" />
+		<meta property="og:site_name" content="Token Balance" />
+		<script type="text/javascript" src="./ABIs/shieldABI.json"></script>
+    <script type="text/javascript" src="./ABIs/kogeABI.json"></script>
+    <script type="text/javascript" src="./ABIs/pearABI.json"></script>
+    <script type="text/javascript" src="./ABIs/singABI.json"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	</head>
+	<body class="is-loading">
+									<h1 id="text01">Polygon Token Balance</h1>
+                  <h7>Enter a polygon wallet address to retrieve it's
+                    balance of the tokens below and total value in Dai based
+                    on the 1inch protocol</h7>
+                    <div><br />
+                      <form>
+                        <label for="fname">Enter Wallet Address:</label><br>
+                        <input type="text" id="walletAddress" name="fname"><br>
+                      </form><br>
+                      <p>
+                        PolyShield (SHI3LD) Balance: <span id="shield-count">0</span><br />Current value in Dai: <span id="shield-quote"></span>
+                        </p>
+                        <p>
+                          KOGE COIN  Balance: <span id="koge-count">0</span><br />Current value in Dai: <span id="koge-quote"></span>
+                          </p>
+                          <p>
+                             PEAR Token balance: <span id="pear-count">0</span><br />Current value in Dai: <span id="pear-quote"></span>
+                            </p>
+                            <p>
+                              SING Token Balance: <span id="sing-count">0</span><br />Current value in Dai: <span id="sing-quote"></span>
+                            </p>
+                      </div>
+									<button class="checkBalance" id= "balanceCheck" onclick = "balance()">Check Balance</button>
+
+<script type="text/javascript" src="./index.js"></script>
+	</body>
+</html>
