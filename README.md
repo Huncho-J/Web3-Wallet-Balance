@@ -18,5 +18,5 @@ I had simple live-server installed and used the command “live-server” to lau
 <p>All interaction with smart contracts and 1inch are stored in index.js
 Contract ABIs are in the ABIs/ folder </p>
 
-###Project features:
+Project features:
 Retrieving a wallet's token balance, interaction with live smart contracts on the polygon network and the 1inch API
