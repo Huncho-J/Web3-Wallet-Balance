@@ -1,28 +1,27 @@
-
 let web3, shieldInstance,kogeInstance,pearInstance, singInstance
 
-
-
-
+//LOADS ALL WEB3 FUNCTIONALITY
 async function loadWeb3(){
   web3 = new Web3('https://speedy-nodes-nyc.moralis.io/b339a04a1ce96516cea5132d/polygon/mainnet')
   const shieldAddress = "0xF239E69ce434c7Fb408b05a0Da416b14917d934e";
   const kogeAddress = "0x13748d548D95D78a3c83fe3F32604B4796CFfa23"
   const pearAddress = "0xc8bcb58caEf1bE972C0B638B1dD8B0748Fdc8A44"
   const singAddress = "0xCB898b0eFb084Df14dd8E018dA37B4d0f06aB26D"
-
+  //LOAD CONTRACT INSTANCES
     shieldInstance =  new web3.eth.Contract(window.shieldABI, shieldAddress);
     kogeInstance =  new web3.eth.Contract(window.kogeABI, kogeAddress);
     pearInstance =  new web3.eth.Contract(window.pearABI, pearAddress);
     singInstance =  new web3.eth.Contract(window.singABI, singAddress);
 }
-
+//RETURNS BALANCE ANND TOTAL VALUE IN DAI
 async function returnBalance() {
   let address = document.getElementById("walletAddress").value
+  //Lload user wallet's balance
   let shieldBal = await shieldInstance.methods.balanceOf(address).call()
   let kogeBal = await kogeInstance.methods.balanceOf(address).call()
   let pearBal = await pearInstance.methods.balanceOf(address).call()
   let singBal = await singInstance.methods.balanceOf(address).call()
+  //get quote from 1inch exchange protocol
   let shieldToDaiQuote, kogeToDaiQuote, pearToDaiQuote, singToDaiQuote
   try{
      shieldToDaiQuote = await axios.get(`https://api.1inch.io/v4.0/137/quote?fromTokenAddress=0xF239E69ce434c7Fb408b05a0Da416b14917d934e&toTokenAddress=0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063&amount=${shieldBal}`)
@@ -32,6 +31,7 @@ async function returnBalance() {
   }catch(err){
     console.log("Wallet address does not have required balance: This error indicates a 0 token balance")
   }
+  //set values
   document.getElementById("shield-count").textContent = shieldBal;
   document.getElementById("koge-count").textContent = kogeBal;
   document.getElementById("pear-count").textContent = pearBal;
