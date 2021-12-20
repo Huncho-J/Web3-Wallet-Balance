@@ -1,7 +1,7 @@
 # Web3-Wallet-Balance
 
 **Description:***
-Enter a polygon wallet address holding all four tokens (shield, koge, pear & sing). It returns the wallet’s balance and their respective total values in Dai. It gets the best value in Dai utilizing the 1inch Protocol.
+Enter a polygon wallet address holding all four tokens (shield, koge, pear & sing). It returns the wallet’s balance and their respective total values in Dai. It gets the best value in Dai by getting a quote from the 1inch Protocol.
 
 ### Mini site hosted at: (https://huncho-j.github.io/Web3-Wallet-Balance/)
 
